@@ -1,0 +1,186 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+
+    <RelativeLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/common_margin_large"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:background="@drawable/background">
+
+        <ImageView
+            android:id="@+id/mark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/common_margin_large"
+            android:src="@drawable/logo_36dp" />
+
+        <TextView
+            android:id="@+id/main_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mark"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/common_margin_medium"
+            android:text="@string/text_welcome_to_use"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/login_title_text_size" />
+
+        <TextView
+            android:id="@+id/sub_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/common_margin_small"
+            android:text="@string/text_investigator_system"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/login_title_text_size" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/input_account_cardview"
+            android:layout_width="@dimen/common_field_wdith"
+            android:layout_height="@dimen/edittext_height"
+            android:layout_below="@id/sub_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/edittext_margin_top"
+            card_view:cardCornerRadius="@dimen/cardview_default_radius">
+
+            <EditText
+                android:id="@+id/input_account"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:hint="@string/text_account"
+                android:inputType="textCapWords"
+                android:paddingLeft="@dimen/common_margin_medium"
+                android:textColor="@color/edit_text_normal_underline"
+                android:textColorHint="@color/edit_text_normal_underline"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/common_descriptor_text_size" />
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/input_password_cardview"
+            android:layout_width="@dimen/common_field_wdith"
+            android:layout_height="@dimen/edittext_height"
+            android:layout_below="@id/input_account_cardview"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/common_margin_medium"
+            card_view:cardCornerRadius="@dimen/cardview_default_radius">
+
+            <EditText
+                android:id="@+id/input_password"
+                android:layout_width="@dimen/common_field_wdith"
+                android:layout_height="@dimen/edittext_height"
+                android:background="@android:color/white"
+                android:hint="@string/text_password"
+                android:inputType="textPassword"
+                android:paddingLeft="@dimen/common_margin_medium"
+                android:textColor="@color/edit_text_normal_underline"
+                android:textColorHint="@color/edit_text_normal_underline"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/common_descriptor_text_size" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/action_login_cardview"
+            android:layout_width="@dimen/common_field_wdith"
+            android:layout_height="@dimen/edittext_height"
+            android:layout_below="@id/input_password_cardview"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/common_margin_medium"
+            card_view:cardCornerRadius="@dimen/cardview_default_radius">
+
+            <Button
+                android:id="@+id/action_login"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/black_button_ripple_background"
+                android:text="@string/text_login"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/common_descriptor_text_size" />
+        </android.support.v7.widget.CardView>
+
+        <ImageView
+            android:id="@+id/login_divider"
+            android:layout_width="@dimen/common_field_wdith"
+            android:layout_height="@dimen/gradient_line_height"
+            android:layout_below="@id/action_login_cardview"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/common_margin_medium"
+            android:src="@drawable/gradient_line" />
+
+        <RelativeLayout
+            android:id="@+id/action_fingerprint_capture"
+            android:layout_width="@dimen/common_field_wdith"
+            android:layout_height="@dimen/login_button_height"
+            android:layout_below="@id/login_divider"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/common_margin_medium"
+            android:background="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/fingericon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_fingerprint_white_24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/common_margin_medium"
+                android:layout_toRightOf="@id/fingericon"
+                android:text="@string/text_finger_login"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/common_descriptor_text_size" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/action_face_capture"
+            android:layout_width="@dimen/common_field_wdith"
+            android:layout_height="@dimen/login_button_height"
+            android:layout_below="@id/action_fingerprint_capture"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/common_margin_small"
+            android:background="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/faceicon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_face_white_24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/common_margin_medium"
+                android:layout_toRightOf="@id/faceicon"
+                android:text="@string/text_face_login"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/common_descriptor_text_size" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

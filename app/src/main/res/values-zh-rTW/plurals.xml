@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="matching_result_number">
+        <item quantity="zero">%d 筆相近資料</item>
+        <item quantity="one">%d 筆相近資料</item>
+        <item quantity="other">%d 筆相近資料</item>
+    </plurals>
+</resources>

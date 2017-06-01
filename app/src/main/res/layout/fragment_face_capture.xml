@@ -1,0 +1,133 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:clickable="true">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary"
+        android:visibility="gone"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:title="@string/label_face_capture" />
+
+    <com.neurotec.biometrics.view.NFaceView
+        android:id="@+id/biometric_view"
+        android:layout_width="@dimen/camera_view_width"
+        android:layout_height="@dimen/camera_view_height"
+        android:layout_below="@id/toolbar" />
+
+    <View
+        android:id="@+id/mask_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/camera_mask_margin"
+        android:layout_below="@id/toolbar"
+        android:layout_marginEnd="@dimen/camera_mask_margin"
+        android:layout_marginStart="@dimen/camera_mask_margin"
+        android:background="#000000" />
+
+    <View
+        android:id="@+id/mask_start"
+        android:layout_width="@dimen/camera_mask_margin"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/toolbar"
+        android:background="#000000" />
+
+    <View
+        android:id="@+id/mask_end"
+        android:layout_width="@dimen/camera_mask_margin"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/toolbar"
+        android:background="#000000" />
+
+    <View
+        android:id="@+id/mask_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_marginEnd="@dimen/camera_mask_margin"
+        android:layout_marginStart="@dimen/camera_mask_margin"
+        android:background="#000000" />
+
+    <ImageView
+        android:id="@+id/focus_top_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/toolbar"
+        android:layout_marginLeft="@dimen/camera_mask_margin"
+        android:layout_marginTop="@dimen/camera_mask_margin"
+        android:alpha="0.7"
+        android:src="@drawable/ic_camera_top_left_72dp" />
+
+    <ImageView
+        android:id="@+id/focus_top_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/toolbar"
+        android:layout_marginRight="@dimen/camera_mask_margin"
+        android:layout_marginTop="@dimen/camera_mask_margin"
+        android:alpha="0.7"
+        android:src="@drawable/ic_camera_top_right_72dp" />
+
+    <ImageView
+        android:id="@+id/focus_bottom_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/toolbar"
+        android:layout_marginLeft="@dimen/camera_mask_margin"
+        android:alpha="0.7"
+        android:src="@drawable/ic_camera_bottom_left_72dp" />
+
+    <ImageView
+        android:id="@+id/focus_bottom_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/toolbar"
+        android:layout_marginRight="@dimen/camera_mask_margin"
+        android:alpha="0.7"
+        android:src="@drawable/ic_camera_bottom_right_72dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/common_margin_large"
+        android:layout_marginEnd="@dimen/common_margin_large"
+        android:layout_marginStart="@dimen/common_margin_large"
+        android:orientation="horizontal"
+        android:paddingEnd="@dimen/common_margin_medium"
+        android:paddingStart="@dimen/common_margin_medium">
+
+        <Button
+            android:id="@+id/action_negative"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/capture_button_height"
+            android:layout_marginEnd="@dimen/common_margin_medium"
+            android:layout_weight="1"
+            android:background="@drawable/button_negative"
+            android:text="@android:string/cancel"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/action_positive"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/capture_button_height"
+            android:layout_marginStart="@dimen/common_margin_medium"
+            android:layout_weight="1"
+            android:background="@drawable/button_positive"
+            android:text="@string/text_action_face_capture"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+</RelativeLayout>

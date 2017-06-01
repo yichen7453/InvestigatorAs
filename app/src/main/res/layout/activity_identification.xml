@@ -1,0 +1,199 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:title="@string/text_identification" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_marginBottom="@dimen/common_margin_large"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:background="@drawable/background">
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/common_label_height"
+            android:layout_marginStart="@dimen/common_margin_large"
+            android:gravity="start|center_vertical"
+            android:text="@string/label_identification_method_selection"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/common_text_size_small" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/action_face_capture"
+            android:layout_width="@dimen/common_face_image_size"
+            android:layout_height="@dimen/common_face_image_size"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/label"
+            android:layout_marginStart="@dimen/common_margin_medium"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:backgroundImage="@android:color/black"
+            fresco:roundedCornerRadius="@dimen/common_image_rounded_corner_radius" />
+
+        <LinearLayout
+            android:id="@+id/hint_face_capture"
+            android:layout_width="@dimen/common_face_image_size"
+            android:layout_height="@dimen/common_face_image_size"
+            android:layout_alignStart="@id/action_face_capture"
+            android:layout_alignTop="@id/action_face_capture"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_camera_white_24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_small"
+                android:text="@string/text_capture_face"
+                android:textSize="@dimen/common_descriptor_text_size" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/action_face_removal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/action_face_capture"
+            android:layout_alignTop="@id/action_face_capture"
+            android:layout_marginEnd="@dimen/removal_icon_negative_margin"
+            android:layout_marginTop="@dimen/removal_icon_negative_margin"
+            android:src="@drawable/ic_cancel_white_24dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/indicator_face"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/action_face_capture"
+            android:layout_alignEnd="@id/action_face_capture"
+            android:layout_marginBottom="@dimen/common_margin_xsmall"
+            android:layout_marginEnd="@dimen/common_margin_xsmall"
+            android:src="@drawable/ic_check_circle_green_18dp"
+            android:visibility="gone" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/action_fingerprint_capture"
+            android:layout_width="@dimen/common_fingerprint_image_size"
+            android:layout_height="@dimen/common_fingerprint_image_size"
+            android:layout_alignBottom="@id/action_face_capture"
+            android:layout_marginStart="@dimen/common_margin_medium"
+            android:layout_toEndOf="@id/action_face_capture"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:backgroundImage="@android:color/black"
+            fresco:roundedCornerRadius="@dimen/common_image_rounded_corner_radius" />
+
+        <LinearLayout
+            android:id="@+id/hint_fingerprint_capture"
+            android:layout_width="@dimen/common_fingerprint_image_size"
+            android:layout_height="@dimen/common_fingerprint_image_size"
+            android:layout_alignStart="@id/action_fingerprint_capture"
+            android:layout_alignTop="@id/action_fingerprint_capture"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_fingerprint_white_24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_small"
+                android:text="@string/text_capture_finger"
+                android:textSize="@dimen/common_descriptor_text_size" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/action_fingerprint_removal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/action_fingerprint_capture"
+            android:layout_alignTop="@id/action_fingerprint_capture"
+            android:layout_marginEnd="@dimen/removal_icon_negative_margin"
+            android:layout_marginTop="@dimen/removal_icon_negative_margin"
+            android:src="@drawable/ic_cancel_white_24dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/indicator_fingerprint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/action_fingerprint_capture"
+            android:layout_alignEnd="@id/action_fingerprint_capture"
+            android:layout_marginBottom="@dimen/common_margin_xsmall"
+            android:layout_marginEnd="@dimen/common_margin_xsmall"
+            android:src="@drawable/ic_check_circle_green_18dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/count_fingerprint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/action_fingerprint_capture"
+            android:layout_alignTop="@id/action_fingerprint_capture"
+            android:layout_marginStart="@dimen/common_margin_xsmall"
+            android:layout_marginTop="@dimen/common_margin_xsmall"
+            android:textSize="@dimen/common_text_size_small"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/label_more"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/common_label_height"
+            android:layout_alignStart="@id/label"
+            android:layout_below="@id/action_face_capture"
+            android:gravity="start|center_vertical"
+            android:text="@string/text_more_options"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/common_descriptor_text_size" />
+
+        <Spinner
+            android:id="@+id/selector_sex"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/label_more"
+            android:layout_below="@id/label_more"
+            android:popupBackground="@color/common_background"
+            android:textColor="@color/common_descriptor_text_color"
+            android:textSize="@dimen/common_edit_spinner_text_size" />
+
+        <Spinner
+            android:id="@+id/selector_age"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label_more"
+            android:layout_marginStart="@dimen/common_margin_large"
+            android:layout_toEndOf="@id/selector_sex"
+            android:popupBackground="@color/common_background"
+            android:textColor="@color/common_descriptor_text_color"
+            android:textSize="@dimen/common_edit_spinner_text_size" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar" />
+
+</RelativeLayout>

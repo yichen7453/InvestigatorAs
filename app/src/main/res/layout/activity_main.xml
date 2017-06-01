@@ -1,0 +1,154 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/common_margin_large"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:background="@drawable/background">
+
+        <RelativeLayout
+            android:layout_width="@dimen/common_field_wdith"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/mark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/logo_36dp" />
+
+            <TextView
+                android:id="@+id/main_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mark"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/common_margin_medium"
+                android:text="@string/text_welcome_to_use"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/login_title_text_size" />
+
+            <TextView
+                android:id="@+id/sub_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/main_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/common_margin_small"
+                android:text="@string/text_investigator_system"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/login_title_text_size" />
+
+            <ImageView
+                android:id="@+id/login_divider"
+                android:layout_width="@dimen/common_field_wdith"
+                android:layout_height="@dimen/gradient_line_height"
+                android:src="@drawable/gradient_line"
+                android:layout_below="@id/sub_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/common_margin_large" />
+
+            <RelativeLayout
+                android:id="@+id/action_identification"
+                android:layout_width="@dimen/common_field_wdith"
+                android:layout_height="@dimen/login_button_height"
+                android:layout_below="@id/login_divider"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/common_margin_large"
+                android:background="?android:attr/selectableItemBackground">
+
+                <ImageView
+                    android:id="@+id/identificaiton_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_search_white_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/common_margin_medium"
+                    android:layout_toRightOf="@id/identificaiton_icon"
+                    android:text="@string/text_identification"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/common_descriptor_text_size" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/action_enrollment"
+                android:layout_width="@dimen/common_field_wdith"
+                android:layout_height="@dimen/login_button_height"
+                android:layout_below="@id/action_identification"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/common_margin_large"
+                android:background="?android:attr/selectableItemBackground">
+
+                <ImageView
+                    android:id="@+id/enrollicon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_person_add_white_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/common_margin_medium"
+                    android:layout_toRightOf="@id/enrollicon"
+                    android:text="@string/text_enrollment"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/common_descriptor_text_size" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/action_settings"
+                android:layout_width="@dimen/common_field_wdith"
+                android:layout_height="@dimen/login_button_height"
+                android:layout_below="@id/action_enrollment"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/common_margin_large"
+                android:background="?android:attr/selectableItemBackground">
+
+                <ImageView
+                    android:id="@+id/settingicon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_settings_white_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/common_margin_medium"
+                    android:layout_toRightOf="@id/settingicon"
+                    android:text="@string/text_settings"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/common_descriptor_text_size" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="@dimen/common_field_wdith"
+                android:layout_height="@dimen/gradient_line_height"
+                android:src="@drawable/gradient_line"
+                android:layout_below="@id/action_settings"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/common_margin_medium" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

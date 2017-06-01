@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.2'
+    defaultConfig {
+        applicationId "com.biginnov.investigator"
+        minSdkVersion 23
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        pickFirst 'META-INF/LE-79BE9.RSA'
+        pickFirst 'META-INF/LE-79BE9.SF'
+    }
+    productFlavors {
+    }
+    sourceSets { main { jniLibs.srcDirs = ['src/main/jniLibs'] } }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.android.support:cardview-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.facebook.fresco:fresco:0.9.0'
+    compile 'net.sf.scuba:scuba-smartcards:0.0.8'
+    compile 'net.sf.scuba:scuba-sc-android:0.0.9'
+    compile 'com.madgag.spongycastle:prov:1.54.0.0'
+    compile 'pub.devrel:easypermissions:0.3.1'
+    compile project(':neurotec-licensing-gui-android')
+    compile files('libs/jmtfpcamera.jar')
+    compile files('libs/neurotec-biometrics-android.jar')
+    compile files('libs/neurotec-biometrics-client-android.jar')
+    compile files('libs/neurotec-biometrics-gui-android.jar')
+    compile files('libs/neurotec-cluster-android.jar')
+    compile files('libs/neurotec-core-android.jar')
+    compile files('libs/neurotec-devices-android.jar')
+    compile files('libs/neurotec-devices-media-android.jar')
+    compile files('libs/neurotec-devices-virtual-android.jar')
+    compile files('libs/neurotec-face-verification-android.jar')
+    compile files('libs/neurotec-face-verification-gui-android.jar')
+    compile files('libs/neurotec-gui-android.jar')
+    compile files('libs/neurotec-licensing-android.jar')
+    compile files('libs/neurotec-licensing-gui-android.jar')
+    compile files('libs/neurotec-media-android.jar')
+    compile files('libs/neurotec-media-processing-android.jar')
+    compile files('libs/neurotec-devices-multimodal-credenceid-android.jar')
+    compile files('libs/jna.jar')
+    compile files('libs/httpcore-4.2.3.jar')
+    compile files('libs/httpclient-4.0.3.jar')
+    compile files('libs/acra.jar')
+    compile files('libs/jmrtd-0.5.6.jar')
+    compile files('libs/d2xx.jar')
+}

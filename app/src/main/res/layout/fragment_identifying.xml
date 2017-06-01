@@ -1,0 +1,70 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:clickable="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/common_margin_large"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:background="@drawable/shape_background"
+        android:paddingBottom="@dimen/common_margin_large"
+        android:paddingEnd="@dimen/common_margin_large"
+        android:paddingStart="@dimen/common_margin_large"
+        android:paddingTop="@dimen/common_margin_large">
+
+        <View
+            android:id="@+id/progress_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/progress_mask"
+            android:layout_alignEnd="@+id/progress_mask"
+            android:layout_alignStart="@+id/progress_mask"
+            android:layout_alignTop="@+id/progress_mask"
+            android:layout_marginBottom="@dimen/common_margin_small"
+            android:layout_marginEnd="@dimen/common_margin_small"
+            android:layout_marginStart="@dimen/common_margin_small"
+            android:layout_marginTop="@dimen/common_margin_small"
+            android:alpha="0"
+            android:background="@color/colorAccent" />
+
+        <ImageView
+            android:id="@+id/progress_mask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/common_margin_large"
+            android:src="@drawable/loading_img" />
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/progress_mask"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/common_margin_large"
+            android:text="@string/text_identifying"
+            android:textSize="@dimen/common_text_size_large" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label"
+            android:layout_centerHorizontal="true"
+            android:text="@string/text_please_wait"
+            android:textSize="@dimen/common_text_size_large" />
+
+        <Button
+            android:id="@+id/action_negative"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_button_height"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="@dimen/common_margin_large"
+            android:layout_marginStart="@dimen/common_margin_large"
+            android:background="@drawable/button_negative"
+            android:text="@android:string/cancel" />
+    </RelativeLayout>
+</FrameLayout>

@@ -1,0 +1,176 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:clickable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/common_margin_large"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:background="@drawable/shape_background"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:background="@drawable/shape_background_template">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/face_image_template"
+                    android:layout_width="@dimen/common_face_image_size"
+                    android:layout_height="@dimen/common_face_image_size"
+                    fresco:actualImageScaleType="centerCrop"
+                    fresco:backgroundImage="@android:color/holo_blue_light"
+                    fresco:roundedCornerRadius="@dimen/common_image_rounded_corner_radius" />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/fingerprint_image_template"
+                    android:layout_width="@dimen/common_fingerprint_image_size"
+                    android:layout_height="@dimen/common_fingerprint_image_size"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="@dimen/common_margin_medium"
+                    fresco:backgroundImage="@android:color/black"
+                    fresco:placeholderImage="@drawable/ic_fingerprint_white_24dp"
+                    fresco:placeholderImageScaleType="center"
+                    fresco:roundedCornerRadius="@dimen/common_image_rounded_corner_radius" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/label_template"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="@dimen/common_margin_small"
+                android:layout_marginTop="@dimen/common_margin_small"
+                android:text="@string/text_template" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="#505058" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/face_image_matching_result"
+                        android:layout_width="@dimen/common_face_image_size"
+                        android:layout_height="@dimen/common_face_image_size"
+                        fresco:actualImageScaleType="centerCrop"
+                        fresco:backgroundImage="@android:color/holo_blue_light"
+                        fresco:roundedCornerRadius="@dimen/common_image_rounded_corner_radius" />
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/fingerprint_image_matching_result"
+                        android:layout_width="@dimen/common_fingerprint_image_size"
+                        android:layout_height="@dimen/common_fingerprint_image_size"
+                        android:layout_gravity="bottom"
+                        android:layout_marginStart="@dimen/common_margin_medium"
+                        fresco:backgroundImage="@android:color/black"
+                        fresco:placeholderImage="@drawable/ic_fingerprint_white_24dp"
+                        fresco:placeholderImageScaleType="center"
+                        fresco:roundedCornerRadius="@dimen/common_image_rounded_corner_radius" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_margin_medium">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="@dimen/common_face_image_size"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:singleLine="true"
+                        android:textColor="@color/item_matching_result_primary_text"
+                        android:textSize="@dimen/item_matching_result_name_text_size" />
+
+                    <TextView
+                        android:id="@+id/info"
+                        android:layout_width="@dimen/common_face_image_size"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/score"
+                        android:layout_alignParentStart="true"
+                        android:singleLine="true"
+                        android:textColor="@color/item_matching_result_secondary_text"
+                        android:textSize="@dimen/item_matching_result_info_text_size" />
+
+                    <FrameLayout
+                        android:id="@+id/separator_container"
+                        android:layout_width="@dimen/common_margin_medium"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@+id/score"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@id/name">
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="@color/item_separator" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/score_label"
+                        android:layout_width="@dimen/common_fingerprint_image_size"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@id/separator_container"
+                        android:singleLine="true"
+                        android:text="@string/text_score"
+                        android:textColor="@color/item_matching_result_secondary_text"
+                        android:textSize="@dimen/item_matching_result_score_label_text_size" />
+
+                    <TextView
+                        android:id="@+id/score"
+                        android:layout_width="@dimen/common_fingerprint_image_size"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/score_label"
+                        android:layout_toEndOf="@id/separator_container"
+                        android:singleLine="true"
+                        android:textColor="@color/item_matching_result_primary_text"
+                        android:textSize="@dimen/item_matching_result_score_text_size" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/label_matching_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="@dimen/common_margin_small"
+                android:layout_marginTop="@dimen/common_margin_small"
+                android:text="@string/text_matching_result" />
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

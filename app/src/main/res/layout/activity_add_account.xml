@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimaryDark">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:title="@string/text_add_account_title"/>
+
+    <RelativeLayout
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_marginBottom="@dimen/common_margin_large"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:background="@drawable/background">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/common_margin_large"
+            android:layout_marginRight="@dimen/common_margin_large"
+            android:layout_marginBottom="@dimen/common_margin_medium">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_medium"
+                android:text="@string/text_add_account" />
+
+
+
+            <include layout="@layout/common_face_finger_layout"
+                android:id="@+id/face_finger_id"
+                android:layout_below="@id/title"
+                android:layout_alignLeft="@id/title"
+                android:layout_marginTop="@dimen/image_title_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+            <TextView
+                android:id="@+id/englishname_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/title"
+                android:layout_below="@id/face_finger_id"
+                android:layout_marginTop="@dimen/common_margin_medium"
+                android:textColor="@color/common_item_text_color"
+                android:textSize="@dimen/common_item_text_size"
+                android:text="@string/text_english_name" />
+
+            <EditText
+                android:id="@+id/englishname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/title"
+                android:layout_below="@id/englishname_title"
+                android:layout_marginTop="@dimen/common_margin_small"
+                android:inputType="textCapSentences"
+                android:textSize="@dimen/common_edit_spinner_text_size"
+                android:textColor="@android:color/white"
+                android:theme="@style/EditTextStyle"
+                android:maxLines="1" />
+
+            <TextView
+                android:id="@+id/password_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/title"
+                android:layout_below="@id/englishname"
+                android:layout_marginTop="@dimen/common_margin_medium"
+                android:textColor="@color/common_item_text_color"
+                android:textSize="@dimen/common_item_text_size"
+                android:text="@string/text_password_title" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignLeft="@id/title"
+                android:layout_below="@id/password_title"
+                android:layout_marginTop="@dimen/common_margin_small"
+                android:inputType="textPassword"
+                android:textSize="@dimen/common_edit_spinner_text_size"
+                android:textColor="@android:color/white"
+                android:theme="@style/EditTextStyle"
+                android:maxLines="1" />
+
+            <TextView
+                android:id="@+id/confirm_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/title"
+                android:layout_below="@id/password"
+                android:layout_marginTop="@dimen/common_margin_medium"
+                android:textColor="@color/common_item_text_color"
+                android:textSize="@dimen/common_item_text_size"
+                android:text="@string/text_confirm_password_title" />
+
+            <EditText
+                android:id="@+id/confirm"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignLeft="@id/title"
+                android:layout_below="@id/confirm_title"
+                android:layout_marginTop="@dimen/common_margin_small"
+                android:inputType="textPassword"
+                android:textSize="@dimen/common_edit_spinner_text_size"
+                android:textColor="@android:color/white"
+                android:theme="@style/EditTextStyle"
+                android:maxLines="1" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</RelativeLayout>

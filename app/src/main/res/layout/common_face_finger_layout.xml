@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/faceimagecardview"
+        android:layout_width="@dimen/common_face_image_size"
+        android:layout_height="@dimen/common_face_image_size"
+        card_view:cardBackgroundColor="@android:color/black"
+        card_view:cardCornerRadius="@dimen/common_background_rounded_corner_radius">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <ImageView
+                    android:id="@+id/cameraicon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_camera_white_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cameraicon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/common_margin_small"
+                    android:text="@string/text_capture_face"
+                    android:textSize="@dimen/common_descriptor_text_size" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/faceimage"
+                android:layout_width="@dimen/common_face_image_size"
+                android:layout_height="@dimen/common_face_image_size"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/facecheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/common_green_check_margin"
+                android:layout_marginRight="@dimen/common_green_check_margin"
+                android:src="@drawable/ic_check_circle_green_18dp"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/fingerimagecardview"
+        android:layout_width="@dimen/common_fingerprint_image_size"
+        android:layout_height="@dimen/common_fingerprint_image_size"
+        android:layout_alignBottom="@id/faceimagecardview"
+        android:layout_marginLeft="@dimen/common_margin_medium"
+        android:layout_toRightOf="@id/faceimagecardview"
+        card_view:cardBackgroundColor="@android:color/black"
+        card_view:cardCornerRadius="@dimen/common_background_rounded_corner_radius">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <ImageView
+                    android:id="@+id/fingericon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_fingerprint_white_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/fingericon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/common_margin_small"
+                    android:text="@string/text_capture_finger"
+                    android:textSize="@dimen/common_descriptor_text_size" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/fingerimage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/fingercheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/common_green_check_margin"
+                android:layout_marginRight="@dimen/common_green_check_margin"
+                android:src="@drawable/ic_check_circle_green_18dp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/fingercount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

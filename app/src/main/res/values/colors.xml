@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@android:color/black</color>
+    <color name="colorPrimaryDark">@android:color/black</color>
+    <color name="colorAccent">#22AC38</color>
+
+    <color name="common_background">#43434B</color>
+    <color name="common_background_dark">#2C2C32</color>
+    <color name="item_background">#FF333333</color>
+    <color name="item_separator">#616169</color>
+    <color name="item_matching_result_primary_text">#FFFFFF</color>
+    <color name="item_matching_result_secondary_text">#B2B2B2</color>
+    <color name="setting_item_background">#3c3c44</color>
+
+    <color name="button_disabled">#555555</color>
+    <color name="button_positive_enabled">#22AC38</color>
+    <color name="button_positive_pressed">#148A27</color>
+    <color name="button_negative_enabled">@android:color/black</color>
+    <color name="button_negative_pressed">#88FFFFFF</color>
+
+    <color name="common_descriptor_text_color">#B2B2B2</color>
+    <!--SettingActivity-->
+
+    <!--Account ManagerMent Activity-->
+    <color name="listview_divider_color">#616169</color>
+    <color name="listview_item_selected">#66000000</color>
+    <!--add Account activity -->
+    <color name="add_button_color">#80000000</color>
+    <color name="common_item_text_color">#B3FFFFFF</color>
+    <!--Edit text underline -->
+    <color name="edit_text_normal_underline">#B2B2B2</color>
+</resources>

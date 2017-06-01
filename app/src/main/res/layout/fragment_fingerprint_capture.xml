@@ -1,0 +1,136 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:clickable="true">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary"
+        android:visibility="gone"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:title="@string/label_fingerprint_capture" />
+
+    <RelativeLayout
+        android:id="@+id/capture_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_marginBottom="@dimen/common_margin_large">
+
+        <!--<com.neurotec.biometrics.view.NFingerView-->
+        <!--android:id="@+id/biometric_view"-->
+        <!--android:layout_width="@dimen/camera_view_width"-->
+        <!--android:layout_height="@dimen/camera_view_height" />-->
+
+        <SurfaceView
+            android:id="@+id/fingerprint_surface_view"
+            android:layout_width="@dimen/fingerprint_view_size"
+            android:layout_height="@dimen/fingerprint_view_size"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/fingerprint_view_margin_top"
+            android:alpha="0" />
+
+        <ImageView
+            android:layout_width="@dimen/fingerprint_view_size"
+            android:layout_height="@dimen/fingerprint_view_size"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/fingerprint_view_margin_top"
+            android:scaleType="centerInside"
+            android:src="@drawable/touch_img" />
+
+        <ImageView
+            android:id="@+id/fingerprint_image_view"
+            android:layout_width="@dimen/fingerprint_view_size"
+            android:layout_height="@dimen/fingerprint_view_size"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/fingerprint_view_margin_top"
+            android:rotationX="180"
+            android:rotationY="180" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/common_margin_large"
+            android:layout_marginEnd="@dimen/common_margin_large"
+            android:layout_marginStart="@dimen/common_margin_large"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/common_margin_medium"
+            android:paddingStart="@dimen/common_margin_medium">
+
+            <Button
+                android:id="@+id/action_negative"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/capture_button_height"
+                android:layout_marginEnd="@dimen/common_margin_medium"
+                android:layout_weight="1"
+                android:background="@drawable/button_negative"
+                android:text="@android:string/cancel"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/action_fingerprint_capture"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/capture_button_height"
+                android:layout_marginStart="@dimen/common_margin_medium"
+                android:layout_weight="1"
+                android:background="@drawable/button_positive"
+                android:enabled="false"
+                android:text="@string/text_action_fingerprint_capture"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/confirm_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_marginBottom="@dimen/common_margin_large"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:background="@drawable/shape_background">
+
+        <LinearLayout
+            android:id="@+id/button_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/common_margin_large"
+            android:layout_marginEnd="@dimen/common_margin_large"
+            android:layout_marginStart="@dimen/common_margin_large"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/common_margin_small"
+            android:paddingStart="@dimen/common_margin_small">
+
+            <Button
+                android:id="@+id/action_positive"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/capture_button_height"
+                android:background="@drawable/button_positive"
+                android:text="@android:string/ok"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/button_bar"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="@dimen/common_margin_medium"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/common_margin_large"
+            android:paddingTop="@dimen/fingerprint_list_padding_top" />
+
+    </RelativeLayout>
+</RelativeLayout>

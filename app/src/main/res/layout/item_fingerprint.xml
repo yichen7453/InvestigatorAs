@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/fingerprint_list_item_height">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/image"
+        android:layout_width="@dimen/common_face_image_size"
+        android:layout_height="@dimen/common_face_image_size"
+        android:layout_centerInParent="true"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:backgroundImage="@android:color/black"
+        fresco:placeholderImage="@drawable/ic_fingerprint_white_40dp"
+        fresco:placeholderImageScaleType="center"
+        fresco:roundedCornerRadius="@dimen/common_image_rounded_corner_radius" />
+
+    <ImageView
+        android:id="@+id/action_fingerprint_removal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/image"
+        android:layout_alignTop="@id/image"
+        android:layout_marginEnd="@dimen/removal_icon_negative_margin"
+        android:layout_marginTop="@dimen/removal_icon_negative_margin"
+        android:src="@drawable/ic_cancel_white_24dp" />
+</RelativeLayout>

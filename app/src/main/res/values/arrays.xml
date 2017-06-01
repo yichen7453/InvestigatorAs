@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sex_selection">
+        <item>@string/text_sex</item>
+        <item>@string/text_female</item><!-- Refer to the definition in BiographicData -->
+        <item>@string/text_male</item>
+        <item>@string/text_unspecified</item>
+    </string-array>
+</resources>
